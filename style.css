@@ -5,7 +5,7 @@
 
 @font-face {
   font-family: Duality;
-  src: url(/fonts/Duality.otf);
+  src: url(fonts/Duality.otf);
 }
 html {
   height: 100%;
@@ -49,7 +49,7 @@ html {
 body {
   margin-top: 400px;
   padding: 0;
-  background: url(/pol.png); /* Синий градиент */
+  background: url(pol.png); /* Синий градиент */
   color: white;
   font-family: "Arial", sans-serif;
   text-align: center;
