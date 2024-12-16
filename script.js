@@ -101,10 +101,32 @@ const dishes = document.querySelectorAll(".dish");
 const tablecloths = document.querySelectorAll(".tablecloth");
 const table = document.getElementById("table");
 const reload = document.querySelector(".reload");
+const toggle_game_tree = document.querySelector(".toggle_game_tree");
+
 let placedDishes = 0;
 
-mainHeader.style.width = "900px";
-mainHeader.style.left = 1080 / 2 - 900 / 2 + "px";
+// Функция для управления прелоадером
+function hidePreloader() {
+  // Получаем элементы прелоадера и основного контента
+  const preloader = document.querySelector(".preloader_wrap");
+  const content = document.getElementById("content");
+
+  // Убираем прелоадер с экрана
+  preloader.style.opacity = "0"; // Плавное исчезновение
+  preloader.style.transition = "opacity 0.5s";
+
+  // Ждем завершения анимации и скрываем элемент полностью
+  setTimeout(() => {
+    preloader.style.display = "none";
+    content.style.display = "block"; // Показываем основной контент
+  }, 500); // Время должно совпадать с transition
+}
+
+// Ждем полной загрузки страницы (включая все ресурсы)
+window.onload = hidePreloader;
+
+mainHeader.style.width = "1700px";
+mainHeader.style.left = 1920 / 2 - 1700 / 2 + "px";
 
 window.addEventListener("mousewheel", function (e) {
   if (e.ctrlKey) {
